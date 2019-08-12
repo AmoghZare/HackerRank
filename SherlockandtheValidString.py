@@ -1,4 +1,7 @@
 #!/bin/python3
+#Problem: Sherlock and the Problem String
+#Difficulty: Medium
+#18/20 Test Cases Passed
 
 import math
 import os
