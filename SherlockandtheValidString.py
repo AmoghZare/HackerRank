@@ -1,8 +1,4 @@
 #!/bin/python3
-#Problem: Sherlock and the Valid String
-#18/20 Test Cases Passed
-#Difficulty: Medium
-
 
 import math
 import os
@@ -26,6 +22,7 @@ def isValid(s):
 def checkValidity(frequency):
     n = len(frequency)
     differentFlag = 0
+    notPossible = 0
     differentCount = 0
     maximumFrequency = max(frequency,key=frequency.count)
     for index in range(n):
@@ -34,8 +31,10 @@ def checkValidity(frequency):
         elif maximumFrequency != frequency[index]:
             differentFlag = 1
             differentCount +=1
+            if abs(maximumFrequency - frequency[index]) > 1:
+                notPossible = 1
                 
-    if differentCount>1:
+    if differentCount>1 or notPossible == 1:
         return 'NO'
     else:
         return 'YES'
@@ -59,4 +58,3 @@ if __name__ == '__main__':
     fptr.write(result + '\n')
 
     fptr.close()
-
